@@ -1,4 +1,4 @@
-# WipEout HD/Fury Zone Random Color Effects generator
+# WipEout HD/Fury Zone Random Color Effects Generator
 A little Python script to generate random color effects on WipEout HD/Fury for RPCS3 or Custom Firmware.
 
 # Requirements
@@ -9,7 +9,7 @@ A little Python script to generate random color effects on WipEout HD/Fury for R
       Python 3.x installed from <a href="https://www.python.org/downloads/">official site</a>
     </li>
     <li>
-      <b><i>zonemode.effectsettings</i></b> file (you can extract yours from data00.psarc or get a copy here)
+      <b><i>zonemode.effectsettings</i></b> file (you can extract yours from data00.psarc or get a copy <a href="https://github.com/TheWalkingFroggy/zonerandomizer/blob/main/dummyzonemode.effectsettings">here</a>)
     </li>
   </ul>
 </div>
