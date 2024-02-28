@@ -16,9 +16,9 @@ A little Python script to generate random color effects on WipEout HD/Fury for R
 
 # Usage
 <div>
-  <p dir="auto">Put both <b><i>randomizer.py</i></b> and <b><i>zonemode.effectsettings</i></b> (renamed as <b><i>dummyzonemode.effectsettings</i></b>) in the same folder. Open CMD:</p>
+  <p dir="auto">Put both <b><i>randomizer.py</i></b> and <b><i>zonemode.effectsettings</i></b> (renamed as <b><i>dummyzonemode.effectsettings</i></b>) in the same folder. Open Command Prompt:</p>
   <pre>py randomizer.py</pre>
-  <p dir="auto">This will generate a new zonemode.effectsettings file. Paste this in:</p>
+  <p dir="auto">This will generate a new <b><i>zonemode.effectsettings</i></b> file. Paste this in:</p>
   <pre>RPCS3Folder/dev_hdd0/game/NPEA00057(or whatever is your region code)/USRDIR/data/environments</pre>
   <p dir="auto"><b><i>data/environments</i></b> folders probably don't exist. You can create them.</p>
 </div>
