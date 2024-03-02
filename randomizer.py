@@ -11,21 +11,28 @@ def Randomizer():
             substr = line.split('=')
             numericValues = substr[1].split()
 
-            i = 0
-            while i<len(numericValues):
-                if((substr[0].find('Fog') != -1) or (substr[0].find('scale') != -1) or (substr[0].find('Sky reflection') != -1) or (substr[0].find('Prelit') != -1)):
+            for i in range(len(numericValues)):
+                newColor = 0
+                black = 0
+                if(random.randint(0, 2) == 1):
+                    black = 255
+                if((substr[0].find('Fog') != -1) or (substr[0].find('scale') != -1) or (substr[0].find('brightness') != -1)):
                     break
                 else:
-                    if(substr[0].find('tint') != -1):
-                        numericValues[i] = numericValues[i].replace(numericValues[i], str(random.randint(0, 255)))
-                    else:        
-                        if(substr[0].find('brightness') != -1):
-                            numericValues[i] = numericValues[i].replace(numericValues[i], str(round(random.uniform(0, 20), 6)))
-                        else: 
-                            if((substr[0].find('Lighting.Constant') != -1) or (substr[0].find('Sun') != -1)):
-                                numericValues[i] = numericValues[i].replace(numericValues[i], str(round(random.uniform(0, 0.5), 6)))
-                            else: numericValues[i] = numericValues[i].replace(numericValues[i], str(round(random.uniform(0, 4), 6)))
-                i = i+1
+                    if((substr[0].find('Lighting.C') != -1) or (substr[0].find('Lighting.P') != -1 )):
+                        numericValues[i] = numericValues[i].replace(numericValues[i], '0.500000')
+                        continue
+                    if((substr[0].find('tint') != -1) or (substr[0].find('Sky reflection') != -1)):
+                        newColor = max(0, (random.randint(0, 255) - black))
+                        numericValues[i] = numericValues[i].replace(numericValues[i], str(newColor))
+                        continue        
+                    if(substr[0].find('Lighting') != -1):
+                        newColor = f'{max(0.00, (round(random.uniform(0, 1), 2) - black)):.6f}'
+                        numericValues[i] = numericValues[i].replace(numericValues[i], str(newColor))
+                        continue
+                    else:
+                        newColor = f'{max(0.00, (round(random.uniform(0, 2), 2) - black)):.6f}'
+                        numericValues[i] = numericValues[i].replace(numericValues[i], str(newColor))
 
             sys.stdout = f1
             print(substr[0] + "=", end="")
